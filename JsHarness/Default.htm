@@ -33,6 +33,9 @@
     
     function PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data) {
         $('#page-title').text(data.title);
+        $('#page-story').html(data.story);
+        $('#page-totalRaisedOnline').text(data.totalRaisedOnline);
+        $('#page-donate-link').attr('href', 'http://v3.staging.justgiving.com/' + data.pageShortName + '/donate');
     }
     
 </script>
@@ -42,8 +45,11 @@
 <input type="button" value="Load JustGiving Page using super duper Javascript magic!" onclick="LoadPageData();"/>
 
 <div id="page-data" style="display:none;">
-    <h3>Oh hai! This is clearly data from the JustGiving API!</h3>
-    <span id="page-title"></span>
+    <h2>Oh hai! This is clearly data from the JustGiving API!</h2>
+    <h3 id="page-title"></h3>
+    My story yo!: <span id="page-story"></span>
+    Total Raised Online: <span id="page-totalRaisedOnline"></span>
+    <a id="page-donate-link" href="#">Donate now!</a>
 </div>
 
 
