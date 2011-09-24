@@ -2,6 +2,12 @@
 # VS
 *.suo
 
+# merge artifacts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+
 # ReSharper
 _ReSharper.*
 *.ReSharper
