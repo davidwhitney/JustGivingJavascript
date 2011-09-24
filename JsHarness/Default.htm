@@ -18,7 +18,10 @@
         }
     });
 
-    alert(jg.data.page.retrieve('david25').PageId);
+    jg.data.page.retrieve('david25', function (data) {
+        var iii = data();
+        alert(iii);
+    });
 </script>
 
 
