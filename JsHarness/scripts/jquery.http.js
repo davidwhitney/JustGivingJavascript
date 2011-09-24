@@ -8,7 +8,7 @@
         if (settings.overrideCallback)
             settings.overrideCallback(data);
         else
-            jg.settings().onResponse(data);
+            jg.settings.onResponse(data);
     }
 
     $.extend({
@@ -32,7 +32,7 @@
                         if (settings.overrideCallback)
                             settings.overrideCallback(data);
                         else
-                            jg.settings().onResponse(data);
+                            jg.settings.onResponse(data);
                     }
                 };
                 $.ajax(ajax);
