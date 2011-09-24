@@ -1,6 +1,8 @@
 ﻿scripts/jquery-1.6.4.min.js
 scripts/core.js
 scripts/data/data.js
+scripts/data/account.js
+scripts/data/charity.js
 scripts/data/page.js
 scripts/jquery.http.js
 scripts/ui/ui.js
