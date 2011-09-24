@@ -10,9 +10,9 @@
     function pageMethods() {
 
         this.retrieve = function (pageShortName) {
-
-            var format = "{apiKey}/v{apiVersion}/fundraising";
-            alert(pageShortName);
+            var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
+            var responseEnvelope = jg.http.get(location);
+            return responseEnvelope;
         };
     }
 

@@ -10,9 +10,10 @@
 <a href="#" onclick="jg.init({apiKey: 'decbf1d2'});">fake link</a>
 
 <script type="text/javascript">
-    jg.init({ apiKey: 'decbf1d2' });
+    jg.init({ apiKey: 'decbf1d2', rootDomain: 'https://api.staging.justgiving.com' });
 
-    jg.data.page().retrieve('pageShortName');
+    var response = jg.data.page().retrieve('pageShortName');
+    alert(response);
 </script>
 
 
