@@ -11,8 +11,8 @@
 
         this.retrieve = function (pageShortName) {
             var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
-            var rawResponse = jg.http.get(location);
-            alert(rawResponse);
+            var responseEnvelope = jg.http.get(location);
+            return responseEnvelope;
         };
     }
 
