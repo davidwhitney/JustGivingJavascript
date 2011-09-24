@@ -1,19 +1,27 @@
 ﻿(function ($) {
 
     $.extend($.data, {
-
         page: {
-            retrieve: function (pageShortName, overrideCallback) {
-                var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
-                var responseEnvelope = jg.http.get({ url: location, overrideCallback: overrideCallback });
-                return responseEnvelope;
-            },
-            exists: function (pageShortName, overrideCallback) {
-                var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
-                var responseEnvelope = jg.http.get({ url: location, overrideCallback: overrideCallback });
-                return responseEnvelope.httpStatus != 404;
-            }
+            retrieve: retrieve,
+            exists: exists
         }
     });
+
+    var retrieve = function (pageShortName, callback) {
+        var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
+        jg.http.get({
+            url: location,
+            overrideCallback: callback
+        });
+    };
+
+    var exists = function (pageShortName, callback) {
+        throw "exists is not implemented";
+        var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
+        jg.http.head({
+            url: location,
+            overrideCallback: callback
+        });
+    };
 
 } (jQuery));
