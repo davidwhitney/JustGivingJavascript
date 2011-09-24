@@ -1,6 +1,6 @@
 ﻿$(function () {
 
-    jg.http.get("https://api.justgiving.com/ea902521/v1/fundraising/pages/justgiving?format=json", function (data) { alert(data.pageId); });
+    jg.http.get({ url: "https://api.justgiving.com/ea902521/v1/fundraising/pages/justgiving?format=json", overrideCallback: function (data) { alert(data.pageId); } });
 
     module("jquery.http.js");
 
