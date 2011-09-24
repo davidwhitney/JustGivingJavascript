@@ -5,7 +5,6 @@
 
         init: function (settings) {
             settings = $.extend({apiKey:'',rootDomain:'',apiVersion:''}, settings);
-            alert('hi');
         }
 });
 

@@ -1,15 +1,17 @@
-﻿function Page() {
+﻿(function ($) {
 
-    this.sayHello = function() {
-        alert('hello');
-    };
-
-}
-
-(function ($) {
     $.extend($.data, {
-    page: function () { alert('page'); }
-
+        page: function () {
+            return new pageMethods();
+        }
     });
+
+
+    function pageMethods() {
+
+        this.retrieve = function (pageShortName) {
+            alert(pageShortName);
+        };
+    }
 
 })(jQuery);
