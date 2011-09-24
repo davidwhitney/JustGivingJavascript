@@ -103,6 +103,9 @@
     <Content Include="Default.htm" />
     <Content Include="scripts\data\account.js" />
     <Content Include="scripts\data\charity.js" />
+    <Content Include="scripts\data\team.js" />
+    <Content Include="scripts\data\event.js" />
+    <Content Include="scripts\data\donation.js" />
     <Content Include="scripts\data\page.js" />
     <Content Include="scripts\glue.js" />
     <Content Include="scripts\data\data.js" />
