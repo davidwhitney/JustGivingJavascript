@@ -4,8 +4,8 @@ var jg = new JustGiving();
 function JustGiving() {
     var self = this;
 
-    this.init = function (options) {
-        alert(options);
+    this.init = function (apiKey, rootDomain, apiVersion) {
+        alert(apiKey);
     };
    
 }
