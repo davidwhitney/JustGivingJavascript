@@ -11,9 +11,8 @@
 
         this.retrieve = function (pageShortName) {
 
-            var format = "{apiKey}/v{apiVersion}/fundraising";
-
-            var location = jg.utils().buildApiLocation(format);
+            var location = "fundraising/" + pageShortName;
+            location = jg.utils().buildApiLocation(location);
 
             alert(location);
         };
