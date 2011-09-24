@@ -10,3 +10,4 @@ _ReSharper.*
 /JgHarness/App_Data/*.*
 /JsHarness/obj
 /JsHarness/bin
+App_Data/*.*
