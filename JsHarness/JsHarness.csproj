@@ -95,13 +95,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\css\qunit.css" />
+    <Content Include="scripts\jquery\plugins\Tests\default.html" />
     <Content Include="Global.asax" />
     <Content Include="Default.htm" />
     <Content Include="scripts\data\page.js" />
     <Content Include="scripts\glue.js" />
     <Content Include="scripts\data\data.js" />
     <Content Include="scripts\core.js" />
-    <Content Include="scripts\jquery-1.6.4.min.js" />
+    <Content Include="scripts\jquery\jquery-1.6.4.min.js" />
+    <Content Include="scripts\jquery\plugins\Tests\jquery.http.js" />
+    <Content Include="scripts\jquery\plugins\Tests\qunit.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="scripts\jquery\plugins\jquery.http.js" />
     <Content Include="Web.config" />
