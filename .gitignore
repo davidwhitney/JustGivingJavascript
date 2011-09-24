@@ -7,9 +7,6 @@ _ReSharper.*
 #dotCover
 *.dotCover
 
-JgHarness/App_Data/*.*
-
-
-JgHarness/bin/*.*
-JgHarness/obj/*.*
-
+/JgHarness/App_Data/*.*
+/JsHarness/obj
+/JsHarness/bin
