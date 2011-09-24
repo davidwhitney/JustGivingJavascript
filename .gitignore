@@ -8,3 +8,8 @@ _ReSharper.*
 *.dotCover
 
 JgHarness/App_Data/*.*
+
+
+JgHarness/bin/*.*
+JgHarness/obj/*.*
+
