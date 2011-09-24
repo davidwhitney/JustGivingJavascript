@@ -1,4 +1,7 @@
 
+# VS
+*.suo
+
 # ReSharper
 _ReSharper.*
 *.ReSharper
@@ -7,6 +10,6 @@ _ReSharper.*
 #dotCover
 *.dotCover
 
-/JgHarness/App_Data/*.*
+/JsHarness/[Aa]pp_[Dd]ata
 /JsHarness/obj
 /JsHarness/bin
