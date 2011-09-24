@@ -1,7 +1,5 @@
-﻿function Ui() {
+﻿(function ($) {
 
-    this.sayHello = function() {
-        alert('hello');
-    };
+    $.extend({ ui: {} });
 
-}
+} (jQuery));
