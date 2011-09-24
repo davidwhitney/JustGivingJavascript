@@ -12,7 +12,10 @@
         this.retrieve = function (pageShortName) {
 
             var format = "{apiKey}/v{apiVersion}/fundraising";
-            alert(pageShortName);
+
+            var location = jg.utils().buildApiLocation(format);
+
+            alert(location);
         };
     }
 
