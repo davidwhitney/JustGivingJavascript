@@ -5,3 +5,11 @@
     };
 
 }
+
+(function ($) {
+    $.extend($.data, {
+    page: function () { alert('page'); }
+
+    });
+
+})(jQuery);

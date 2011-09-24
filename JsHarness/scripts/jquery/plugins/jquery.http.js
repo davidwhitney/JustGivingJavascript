@@ -1,8 +1,6 @@
-﻿var jg = jQuery.noConflict();
-
-(function($) {
-    $.extend({
-            http: {
+﻿(function($) {$.extend({
+            
+        http: {
                 get: function() {
 
                     return "GET";
@@ -19,4 +17,5 @@
                 }
             }
         });
+    
 })(jQuery);

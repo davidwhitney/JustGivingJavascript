@@ -101,9 +101,9 @@
     <Content Include="scripts\glue.js" />
     <Content Include="scripts\data\data.js" />
     <Content Include="scripts\core.js" />
+    <Content Include="scripts\jquery-1.6.4.min.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="scripts\jquery\plugins\jquery.http.js" />
-    <Content Include="scripts\ui\ui.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,10 +1,12 @@
-﻿var jg = new JustGiving();
+﻿var jg = jQuery.noConflict();
 
-function JustGiving() {
-    var self = this;
+(function ($) {
+    $.extend(true, {
 
-    this.init = function (apiKey, rootDomain, apiVersion) {
-        alert(apiKey);
-    };
+        init: function (settings) {
+            settings = $.extend({apiKey:'',rootDomain:'',apiVersion:''}, settings);
+            alert('hi');
+        }
+});
 
-}
+})(jQuery);

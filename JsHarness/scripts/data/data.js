@@ -1,7 +1,9 @@
-﻿function JustGivingData() {
+﻿(function ($) {
+    $.extend({
 
-    this.sayHello = function() {
-        alert('hello');
-    };
+        data: function () {
+            alert('data stuff');
+        }
+    });
 
-}
+})(jQuery);

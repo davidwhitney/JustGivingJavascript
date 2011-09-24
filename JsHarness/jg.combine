@@ -1,3 +1,7 @@
-﻿scripts/core.js
+﻿scripts/jquery-1.6.4.min.js
+scripts/core.js
 scripts/data/data.js
+scripts/data/page.js
+scripts/jquery/plugins/jquery.http.js
+scripts/ui/ui.js
 scripts/glue.js
