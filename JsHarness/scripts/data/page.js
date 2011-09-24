@@ -1,19 +1,19 @@
 ﻿(function ($) {
 
     $.extend($.data, {
-        page: function () {
-            return new pageMethods();
+
+        page: {
+            retrieve: function (pageShortName) {
+                var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
+                var responseEnvelope = jg.http.get(location);
+                return responseEnvelope
+            },
+            exists: function (pageShortName) {
+                var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
+                var responseEnvelope = jg.http.head(location);
+                return responseEnvelope.httpStatus != 404;
+            }
         }
     });
 
-
-    function pageMethods() {
-
-        this.retrieve = function (pageShortName) {
-            var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
-            var responseEnvelope = jg.http.get(location);
-            return responseEnvelope;
-        };
-    }
-
-})(jQuery);
+} (jQuery));
