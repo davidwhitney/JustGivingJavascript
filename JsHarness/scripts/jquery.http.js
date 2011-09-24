@@ -3,11 +3,16 @@
 
         http: {
 
-            get: function (url, callback) {
-                var settings = {
-                    url: url,
+            get: function (settings) {
+                var ajax = {
+                    url: settings.url,
                     dataType: 'jsonp',
-                    success: function (data) { callback(data); }
+                    success: function (data) {
+                        if (settings.overrideCallback)
+                            settings.overrideCallback(data);
+                        else
+                            jg.settings().
+                    }
                 };
                 $.ajax(settings);
             
