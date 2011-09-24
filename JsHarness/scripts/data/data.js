@@ -3,4 +3,4 @@
         data: function () {
         }
     });
-})(jQuery);
+}(jQuery));
