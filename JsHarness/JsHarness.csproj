@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Default.htm" />
+    <Content Include="scripts\data\page.js" />
     <Content Include="scripts\glue.js" />
     <Content Include="scripts\data\data.js" />
     <Content Include="scripts\core.js" />
