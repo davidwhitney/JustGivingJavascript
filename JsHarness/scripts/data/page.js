@@ -10,11 +10,9 @@
     function pageMethods() {
 
         this.retrieve = function (pageShortName) {
-
-            var location = "fundraising/" + pageShortName;
-            location = jg.utils().buildApiLocation(location);
-
-            alert(location);
+            var location = jg.utils().buildApiLocation("fundraising/" + pageShortName);
+            var rawResponse = jg.http.get(location);
+            alert(rawResponse);
         };
     }
 
