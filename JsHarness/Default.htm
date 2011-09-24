@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="jg.js"></script>
 </head>
 <body>
 
-
-<a href="#" onclick="jg.init({apiKey: 'decbf1d2'});">fake link</a>
 
 <script type="text/javascript">
     jg.init({
@@ -18,10 +17,34 @@
         }
     });
 
-    jg.data.page.retrieve('david25', function (data) {
-        alert(data.pageId);
-    });
+    function LoadPageData() {
+
+        $('#page-data').fadeOut();
+        var pageShortName = $('#pageShortName').val();
+        
+        jg.data.page.retrieve(pageShortName, function (data) {
+
+            PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data);
+            $('#page-data').fadeIn();
+            
+        });
+
+    }
+    
+    function PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data) {
+        $('#page-title').text(data.title);
+    }
+    
 </script>
+
+<h1>JustGiving Javascript SDK bitches!</h1>
+<input id="pageShortName" type="text" value="david25"/>
+<input type="button" value="Load JustGiving Page using super duper Javascript magic!" onclick="LoadPageData();"/>
+
+<div id="page-data" style="display:none;">
+    <h3>Oh hai! This is clearly data from the JustGiving API!</h3>
+    <span id="page-title"></span>
+</div>
 
 
 </body>
