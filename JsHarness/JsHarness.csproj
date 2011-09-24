@@ -101,6 +101,8 @@
     <Content Include="scripts-test\default.html" />
     <Content Include="Global.asax" />
     <Content Include="Default.htm" />
+    <Content Include="scripts\data\account.js" />
+    <Content Include="scripts\data\charity.js" />
     <Content Include="scripts\data\page.js" />
     <Content Include="scripts\glue.js" />
     <Content Include="scripts\data\data.js" />

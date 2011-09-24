@@ -15,8 +15,8 @@
         utils: {
             buildApiLocation: function (locationFormat) {
                 var format = jg.settings.rootDomain + "/{apiKey}/v{apiVersion}/" + locationFormat;
-                format = format.replace("{apiKey}", jg.settings().apiKey);
-                format = format.replace("{apiVersion}", jg.settings().apiVersion);
+                format = format.replace("{apiKey}", jg.settings.apiKey);
+                format = format.replace("{apiVersion}", jg.settings.apiVersion);
                 alert(format);
                 return format;
             }
