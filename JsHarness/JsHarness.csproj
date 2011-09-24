@@ -96,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Default.htm" />
+    <Content Include="scripts\glue.js" />
+    <Content Include="scripts\jg.data.js" />
     <Content Include="scripts\core.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
