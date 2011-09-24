@@ -1,6 +1,5 @@
 ﻿(function ($) {
-    $.extend({
-        data: function () {
-        }
-    });
-}(jQuery));
+
+    $.extend({ data: {} });
+
+} (jQuery));
