@@ -28,7 +28,6 @@
             $('#page-data').fadeIn();
             
         });
-
     }
     
     function PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data) {
@@ -37,6 +36,20 @@
         $('#page-totalRaisedOnline').text(data.totalRaisedOnline);
         $('#page-donate-link').attr('href', 'http://v3.staging.justgiving.com/' + data.pageShortName + '/donate');
     }
+    
+    function LoadEventData() {
+
+        $('#event-data').fadeOut();
+        var eventId = $('#eventId').val();
+
+        jg.data.event.retrieve(eventId, function (data) {
+            $('#event-name').text(data.name);
+            $('#event-description').text(data.description);
+            $('#event-expiryDate').text(data.expiryDate);
+            $('#event-data').fadeIn();
+        });
+    }
+    
     
 </script>
 
@@ -59,6 +72,19 @@
     </div>
 </div>
 
+<div>
+<h2>Event Data</h2>
+    <div style="padding-bottom: 20px;">
+        <input id="eventId" type="text" value="486547"/>
+        <input type="button" value="Load JustGiving Event" onclick="LoadEventData();"/>
+    </div>
+
+    <div id="event-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
+        <h3 id="event-name"></h3>
+        <div id="event-description"></div>
+        <div id="event-expiryDate"></div>
+    </div>
+</div>
 
 </body>
 </html>
