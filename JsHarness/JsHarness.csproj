@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Default.htm" />
     <Content Include="scripts\core.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
