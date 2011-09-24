@@ -11,4 +11,4 @@ scripts/data/page.js
 scripts/data/team.js
 scripts/jquery.http.js
 scripts/ui/ui.js
-scripts/glue.js
+scripts/ui/status.js

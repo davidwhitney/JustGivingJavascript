@@ -4,10 +4,10 @@
 
         status: function (target, pageShortName) {
             target = getJQueryObject(target);
-            var page = jg.data.page.retrieve(pageShortName);
-            var status = createStatus(page);
-            target.append(status.element);
-            return status;
+            jg.data.page.retrieve(pageShortName, function (page) {
+                var status = createStatus(page);
+                target.append(status.element);
+            });
         }
 
     });
@@ -29,10 +29,9 @@
         if (typeof target == "string") {
             target = $(target);
         }
-        if (target.constructor == "?" && target.length != 0) {
+        if (target.length != 0) {
             return target;
         }
-        throw "target suplied was invalid. target must be a non-empty jQuery object or a selector string that selects at least one DOM element.";
     };
 
 } (jQuery));

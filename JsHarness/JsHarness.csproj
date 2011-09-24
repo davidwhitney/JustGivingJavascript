@@ -116,6 +116,7 @@
     <Content Include="scripts\ui\status.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="scripts\jquery.http.js" />
+    <Content Include="ui.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
