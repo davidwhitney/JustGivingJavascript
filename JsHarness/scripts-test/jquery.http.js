@@ -1,8 +1,10 @@
-﻿$(function() {
+﻿$(function () {
 
-    module("Module A");
+    jg.http.get("https://api.justgiving.com/ea902521/v1/fundraising/pages/justgiving?format=json", function (data) { alert(data.pageId); });
 
-    test("first test within module", function() {
+    module("jquery.http.js");
+
+    test("first test within module", function () {
         ok(true, "all pass");
     });
 
