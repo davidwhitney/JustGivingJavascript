@@ -2,13 +2,13 @@
 
     $.ajaxSetup({
             accepts: 'application/json',
-            dataType: 'jsonp'
-//            beforeSend: function(xhr) {
-//                if (jg.settings.username && jg.settings.password) {
-//                    xhr.setRequestHeader("Authentication", "Basic " + jg.settings.username + ":" + jg.settings.password);
-//                    xhr.setRequestHeader("Authorization", "Basic " + jg.settings.username + ":" + jg.settings.password);
-//                }
-//            }
+            dataType: 'jsonp',
+            beforeSend: function(xhr) {
+                if (jg.settings.username && jg.settings.password) {
+                    xhr.setRequestHeader("Authentication", "Basic " + $.base64.encode(jg.settings.username + ":" + jg.settings.password));
+                    xhr.setRequestHeader("Authorization", "Basic " + $.base64.encode(jg.settings.username + ":" + jg.settings.password));
+                }
+            }
         });
 
     $.extend({

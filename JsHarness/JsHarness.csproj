@@ -101,8 +101,6 @@
     <Content Include="scripts-test\default.html" />
     <Content Include="Global.asax" />
     <Content Include="Default.htm" />
-    <Content Include="scripts\data\account.js" />
-    <Content Include="scripts\data\charity.js" />
     <Content Include="scripts\data\page.js" />
     <Content Include="scripts\glue.js" />
     <Content Include="scripts\data\data.js" />
@@ -111,6 +109,7 @@
     <Content Include="scripts-test\jquery.http.js" />
     <Content Include="scripts-test\qunit.js" />
     <Content Include="scripts\jquery-json-2.2.min.js" />
+    <Content Include="scripts\jquery-base64.min.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="scripts\jquery.http.js" />
     <Content Include="Web.config" />
@@ -145,7 +144,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>7752</DevelopmentServerPort>
+          <DevelopmentServerPort>58110</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
