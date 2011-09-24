@@ -55,7 +55,7 @@
         if (settings.overrideCallback)
             settings.overrideCallback($.extend({ textStatus: textStatus, xhr: xhr }, data));
         else
-            jg.settings().onResponse($.extend({ textStatus: textStatus, xhr: xhr }, data));
+            jg.settings.onResponse(data);
     }
 
 })(jQuery);

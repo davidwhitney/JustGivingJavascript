@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="jg.js"></script>
 </head>
 <body>
 
-
-<a href="#" onclick="jg.init({apiKey: 'decbf1d2'});">fake link</a>
 
 <script type="text/javascript">
     jg.init({
@@ -18,12 +17,74 @@
         }
     });
 
-    jg.data.page.retrieve('david25', function (data) {
-        var iii = data();
-        alert(iii);
-    });
+    function LoadPageData() {
+
+        $('#page-data').fadeOut();
+        var pageShortName = $('#pageShortName').val();
+        
+        jg.data.page.retrieve(pageShortName, function (data) {
+
+            PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data);
+            $('#page-data').fadeIn();
+            
+        });
+    }
+    
+    function PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data) {
+        $('#page-title').text(data.title);
+        $('#page-story').html(data.story);
+        $('#page-totalRaisedOnline').text(data.totalRaisedOnline);
+        $('#page-donate-link').attr('href', 'http://v3.staging.justgiving.com/' + data.pageShortName + '/donate');
+    }
+    
+    function LoadEventData() {
+
+        $('#event-data').fadeOut();
+        var eventId = $('#eventId').val();
+
+        jg.data.event.retrieve(eventId, function (data) {
+            $('#event-name').text(data.name);
+            $('#event-description').text(data.description);
+            $('#event-expiryDate').text(data.expiryDate);
+            $('#event-data').fadeIn();
+        });
+    }
+    
+    
 </script>
 
+<h1>JustGiving Javascript SDK bitches!</h1>
+
+<div>
+<h2>Fundraising Page Data</h2>
+    <div style="padding-bottom: 20px;">
+        <input id="pageShortName" type="text" value="david25"/>
+        <input type="button" value="Load JustGiving Page using super duper Javascript magic!" onclick="LoadPageData();"/>
+    </div>
+
+    <div id="page-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
+        <h3 id="page-title"></h3>
+        <span id="page-story"></span>
+        Total Raised Online: <span id="page-totalRaisedOnline"></span>
+        <div style="padding: 15px;">
+            <a id="page-donate-link" href="#">Donate now!</a>
+        </div>
+    </div>
+</div>
+
+<div>
+<h2>Event Data</h2>
+    <div style="padding-bottom: 20px;">
+        <input id="eventId" type="text" value="486547"/>
+        <input type="button" value="Load JustGiving Event" onclick="LoadEventData();"/>
+    </div>
+
+    <div id="event-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
+        <h3 id="event-name"></h3>
+        <div id="event-description"></div>
+        <div id="event-expiryDate"></div>
+    </div>
+</div>
 
 </body>
 </html>
