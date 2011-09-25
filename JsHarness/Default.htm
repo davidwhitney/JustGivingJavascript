@@ -47,6 +47,18 @@
         });
     }
     
+    function LoadTeamData() {
+
+        $('#team-data').fadeOut();
+        var eventId = $('#teamShortName').val();
+
+        jg.data.team.retrieve(eventId, function (data) {
+            $('#team-name').text(data.name);
+            $('#team-story').html(data.story);
+            $('#team-data').fadeIn();
+        });
+    }
+    
     
 </script>
 
@@ -80,6 +92,19 @@
         <h3 id="event-name"></h3>
         <div id="event-description"></div>
         <div id="event-expiryDate"></div>
+    </div>
+</div>
+
+<div>
+<h2>Team Data</h2>
+    <div style="padding-bottom: 20px;">
+        <input id="teamShortName" type="text" value="awesome"/>
+        <input type="button" value="Load JustGiving Team" onclick="LoadTeamData();"/>
+    </div>
+
+    <div id="team-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
+        <h3 id="team-name"></h3>
+        <div id="team-story"></div>
     </div>
 </div>
 
