@@ -126,6 +126,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="jg.min.combine" />
     <None Include="jg.combine" />
   </ItemGroup>
   <ItemGroup>
