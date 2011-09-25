@@ -50,15 +50,28 @@
     function LoadTeamData() {
 
         $('#team-data').fadeOut();
-        var eventId = $('#teamShortName').val();
+        var teamShortName = $('#teamShortName').val();
 
-        jg.data.team.retrieve(eventId, function (data) {
+        jg.data.team.retrieve(teamShortName, function (data) {
             $('#team-name').text(data.name);
             $('#team-story').html(data.story);
             $('#team-data').fadeIn();
         });
     }
     
+    function LoadDonationData() {
+
+        $('#donation-data').fadeOut();
+        var donationId = $('#donationId').val();
+
+        jg.data.donation.retrieve(donationId, function (data) {
+            $('#donation-donorDisplayName').text(data.donorDisplayName);
+            $('#donation-amount').text(data.amount);
+            $('#donation-message').text(data.message);
+            $('#donation-status').text(data.status);
+            $('#donation-data').fadeIn();
+        });
+    }
     
 </script>
 
@@ -105,6 +118,21 @@
     <div id="team-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
         <h3 id="team-name"></h3>
         <div id="team-story"></div>
+    </div>
+</div>
+
+<div>
+<h2>Donation Data</h2>
+    <div style="padding-bottom: 20px;">
+        <input id="donationId" type="text" value="20905200"/>
+        <input type="button" value="Load JustGiving Donation" onclick="LoadDonationData();"/>
+    </div>
+
+    <div id="donation-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
+        <h3 id="donation-donorDisplayName"></h3>
+        <div id="donation-amount"></div>
+        <div id="donation-message"></div>
+        <div id="donation-status"></div>
     </div>
 </div>
 
