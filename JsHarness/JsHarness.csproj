@@ -105,7 +105,6 @@
     <Content Include="scripts\data\event.js" />
     <Content Include="scripts\data\donation.js" />
     <Content Include="scripts\data\page.js" />
-    <Content Include="scripts\glue.js" />
     <Content Include="scripts\data\data.js" />
     <Content Include="scripts\core.js" />
     <Content Include="scripts\jquery-1.6.4.min.js" />

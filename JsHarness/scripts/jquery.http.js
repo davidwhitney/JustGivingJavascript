@@ -1,22 +1,24 @@
 ﻿(function($) {
 
     $.ajaxSetup({
-            accepts: 'application/json',
-            dataType: 'jsonp',
-            beforeSend: function(xhr) {
-                if (jg.settings.username && jg.settings.password) {
-                    xhr.setRequestHeader("Authentication", "Basic " + $.base64.encode(jg.settings.username + ":" + jg.settings.password));
-                    xhr.setRequestHeader("Authorization", "Basic " + $.base64.encode(jg.settings.username + ":" + jg.settings.password));
-                }
+        accepts: 'application/json',
+        dataType: 'jsonp',
+        beforeSend: function(xhr) {
+            if (jg.settings.username && jg.settings.password) {
+                xhr.setRequestHeader("Authentication", "Basic " + $.base64.encode(jg.settings.username + ":" + jg.settings.password));
+                xhr.setRequestHeader("Authorization", "Basic " + $.base64.encode(jg.settings.username + ":" + jg.settings.password));
             }
-        });
+        }
+    });
 
-    $.extend({
+    $.extend(jg, {
             http: {
                 get: function(settings) {
                     var ajax = {
                         url: settings.url + '?format=json',
-                        success: function(data) { success(settings, data); }
+                        success: function (data) {
+                            success(settings, data);
+                        }
                     };
                     $.ajax(ajax);
 
