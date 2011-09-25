@@ -9,6 +9,7 @@ scripts/data/donation.js
 scripts/data/event.js
 scripts/data/page.js
 scripts/data/team.js
+scripts/data/search.js
 scripts/jquery.http.js
 scripts/ui/ui.js
 scripts/glue.js

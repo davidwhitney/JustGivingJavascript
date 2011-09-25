@@ -15,7 +15,7 @@
             http: {
                 get: function(settings) {
                     var ajax = {
-                        url: settings.url + '?format=json',
+                        url: settings.url + (settings.url.indexOf('?')==-1 ? '?' : '&') + 'format=json' ,
                         success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); }
                     };
                     $.ajax(ajax);
