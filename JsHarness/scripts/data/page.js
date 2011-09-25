@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    $.extend($.data, {
+    $.extend(jg.data, {
 
         page: {
             retrieve: function (pageShortName, overrideCallback) {

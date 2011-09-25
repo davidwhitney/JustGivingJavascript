@@ -1,8 +1,8 @@
-﻿var jg = jQuery.noConflict();
+﻿var jg = {};
 
 (function ($) {
 
-    $.extend({
+    $.extend(jg, {
 
         init: function (supplied) {
             jg.settings = $.extend({

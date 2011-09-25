@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    $.extend($.data, {
+    $.extend(jg.data, {
 
         event: {
             retrieve: function (eventId, overrideCallback) {

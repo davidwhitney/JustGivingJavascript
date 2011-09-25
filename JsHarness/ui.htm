@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JustGiving UI</title>
+    <script src="/jg.js"></script>
+    <script>
+        
+        jg.init({
+            apiKey: 'decbf1d2',
+            rootDomain: 'https://api.staging.justgiving.com'
+        });
+
+        jQuery(function () {
+            jg.ui.status("#widgetContainer", "samtest");
+        });
+
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>JustGiving UI</h1>
+    </header>
+
+    <section>
+        <h2>Status widget</h2>
+        <div id="widgetContainer"></div>
+    </section>
+
+</body>
+</html>

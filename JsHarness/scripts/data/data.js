@@ -1,5 +1,5 @@
 ﻿(function ($) {
 
-    $.extend({ data: {} });
+    $.extend(jg, { data: {} });
 
 } (jQuery));

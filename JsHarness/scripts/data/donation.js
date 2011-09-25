@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    $.extend($.data, {
+    $.extend(jg.data, {
 
         donation: {
             retrieve: function (donationId, overrideCallback) {

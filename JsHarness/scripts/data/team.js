@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    $.extend($.data, {
+    $.extend(jg.data, {
 
         team: {
             retrieve: function (teamShortName, overrideCallback) {
