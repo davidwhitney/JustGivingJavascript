@@ -124,6 +124,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="widget-ideas.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="jg.combine" />

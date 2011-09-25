@@ -11,7 +11,6 @@
         }
     });
 
-    // Banner size will be 240 x 400 px
     var createStatus = function (page) {
         var wrapper = $("<div class='justGivingStatus'></div>");
         var thermometer = $("<div class='thermometer'></div>");
@@ -45,6 +44,7 @@
         if (target.length != 0) {
             return target;
         }
+        throw "'target' must either be a jQuery object or a css selector that selects at least one DOM element."
     };
 
 } (jQuery));
