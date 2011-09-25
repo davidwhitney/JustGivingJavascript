@@ -1,9 +1,13 @@
 ﻿(function ($) {
 
-    var simple = function (target, pageShortName) {
+    var simple = function (target, pageShortName, theme) {
+        if (typeof theme == "string") {
+            theme = jg.ui.widgets.simple.themes[theme];
+        }
+        theme = theme || jg.ui.widgets.simple.themes.dark;
         target = jg.ui.utils.getJQueryObject(target);
         jg.data.page.retrieve(pageShortName, function (page) {
-            target.append(createWidget(page).element);
+            target.append(createWidget(page, theme).element);
         })
     };
 
@@ -12,12 +16,17 @@
             background: "black",
             foreground: "#72635c",
             highlight: "pink"
+        },
+        light: {
+            background: "#fcc",
+            foreground: "#003CFF",
+            highlight: "#72635c"
         }
     };
 
     $.extend(jg.ui.widgets, { simple: simple });
 
-    var createWidget = function (page) {
+    var createWidget = function (page, theme) {
 
         var styleMarkup = "<style type='text/css'>"
             + "    .jg-text-widget { width:240px; background:{background}; color:{foreground};"
@@ -61,8 +70,6 @@
             totalLeftToRaise: page.currencySymbol + (page.fundraisingTarget - totalRaised),
             pageUrl: jg.settings.websiteUrl + "/" + page.pageShortName
         };
-
-        var theme = jg.ui.widgets.simple.themes.dark;
 
         widgetMarkup = renderTemplate(widgetMarkup, model);
         styleMarkup = renderTemplate(styleMarkup, theme);
