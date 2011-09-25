@@ -132,6 +132,7 @@
   <ItemGroup>
     <Content Include="content\css\qunit.css" />
     <Content Include="content\images\ajax-loader.gif" />
+    <Content Include="data.htm" />
     <Content Include="examples\search\Default.htm" />
     <Content Include="scripts-test\default.html" />
     <Content Include="Global.asax" />
