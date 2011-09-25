@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\css\qunit.css" />
+    <Content Include="content\images\ajax-loader.gif" />
     <Content Include="examples\search\Default.htm" />
     <Content Include="scripts-test\default.html" />
     <Content Include="Global.asax" />
@@ -147,6 +148,7 @@
     <Content Include="scripts-test\qunit.js" />
     <Content Include="scripts\jquery-json-2.2.min.js" />
     <Content Include="scripts\jquery-base64.min.js" />
+    <Content Include="examples\search\jquery-beta.tmpl.min.js" />
     <Content Include="scripts\ui\fundraisingWidget.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="scripts\jquery.http.js" />

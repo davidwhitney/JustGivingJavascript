@@ -7,7 +7,7 @@
             }
         });
 
-    jg.data.search.CharitySearch('tree', 1, 10, function(data) {
+    jg.data.search.charitySearch('tree', 1, 10, function(data) {
 
         alert(data.query);
 

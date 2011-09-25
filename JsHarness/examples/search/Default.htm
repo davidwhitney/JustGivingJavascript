@@ -3,85 +3,164 @@
 <head>
     <title></title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script type="text/javascript" src="jg.js"></script>
+    <script type="text/javascript" src="/jg.js"></script>
+    <script type="text/javascript" src="jquery-beta.tmpl.min.js"></script>
 </head>
 <body>
 
 
 <script type="text/javascript">
+    $(function() {
     jg.init({
         apiKey: 'decbf1d2',
         rootDomain: 'https://api.staging.justgiving.com'
     });
 
-    function LoadPageData() {
+    var searchTimeout;
+    $('#official-charities-form').submit(function () { return false; });
 
-        $('#page-data').fadeOut();
-        var pageShortName = $('#pageShortName').val();
-        
-        jg.data.page.retrieve(pageShortName, function (data) {
+    $('#official-charities-search').keyup(function () {
 
-            PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data);
-            $('#page-data').fadeIn();
-            
-        });
-    }
-    
-    function PretendImUsingKnockoutJsToBindToTheUiButImNotReallyThatCool(data) {
-        $('#page-title').text(data.title);
-        $('#page-story').html(data.story);
-        $('#page-totalRaisedOnline').text(data.totalRaisedOnline);
-        $('#page-donate-link').attr('href', 'http://v3.staging.justgiving.com/' + data.pageShortName + '/donate');
-    }
-    
-    function LoadEventData() {
+        clearTimeout(searchTimeout);
+        var query = $(this).val();
+        if ($.trim(query) == '') {
+            $('#official-charities-indicator').empty();
+            $('#official-charities-data').empty();
+            return;
+        }
 
-        $('#event-data').fadeOut();
-        var eventId = $('#eventId').val();
+        query = encodeURIComponent(query);
 
-        jg.data.event.retrieve(eventId, function (data) {
-            $('#event-name').text(data.name);
-            $('#event-description').text(data.description);
-            $('#event-expiryDate').text(data.expiryDate);
-            $('#event-data').fadeIn();
-        });
-    }
-    
+        if ($('#official-charities-indicator').html() == '') $('<img />', { src: '/content/images/ajax-loader.gif' }).appendTo($('#official-charities-indicator'));
+        $('#official-charities-data').hide('fade');
+
+        searchTimeout = setTimeout(function () {
+            $.data.search.charitySearch(query, 1, 100, function (data) {
+                   
+                    $('#official-charities-indicator').empty();
+                    $('#official-charities-data').empty();
+                    if (data.charitySearchResults.length > 0)
+                        $('#official-charities-template').tmpl(data.charitySearchResults).appendTo($('#official-charities-data'));
+                    else
+                        $('#official-charities-data').text('No charities found');
+
+                    $('#official-charities-data').show('fade');
+            });
+        }, '500');
+    });
+    });
     
 </script>
 
-<h1>JustGiving Javascript SDK bitches!</h1>
+<style>
+    body {font-family: Arial,Helvetica,sans-serif;}
+    
+    h3 {
+    color: #68674F;
+    font-size: 18px;
+    line-height: 1.28;
+    margin-bottom: 9px;
+}
 
-<div>
-<h2>Fundraising Page Data</h2>
-    <div style="padding-bottom: 20px;">
-        <input id="pageShortName" type="text" value="david25"/>
-        <input type="button" value="Load JustGiving Page using super duper Javascript magic!" onclick="LoadPageData();"/>
-    </div>
 
-    <div id="page-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
-        <h3 id="page-title"></h3>
-        <span id="page-story"></span>
-        Total Raised Online: <span id="page-totalRaisedOnline"></span>
-        <div style="padding: 15px;">
-            <a id="page-donate-link" href="#">Donate now!</a>
-        </div>
-    </div>
-</div>
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 
-<div>
-<h2>Event Data</h2>
-    <div style="padding-bottom: 20px;">
-        <input id="eventId" type="text" value="486547"/>
-        <input type="button" value="Load JustGiving Event" onclick="LoadEventData();"/>
-    </div>
+.official-charities-wrap .official-charity-data {
+    border-bottom: 1px solid #CAC8BE;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    width: 433px;
+}
 
-    <div id="event-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
-        <h3 id="event-name"></h3>
-        <div id="event-description"></div>
-        <div id="event-expiryDate"></div>
-    </div>
-</div>
+.official-charities-wrap .official-charity-data .logo-add {
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    width: 103px;
+}
+
+.official-charities-wrap .official-charity-data .content {
+    float: left;
+    width: 320px;
+}
+
+.official-charities-wrap .official-charity-data .content p {
+    margin-bottom: 0;
+}
+
+p {
+    color: #68674F;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+form .medium-length {
+    background: none repeat scroll 0 0 white;
+    padding: 4px;
+    width: 338px;
+}
+
+form .input {
+    border: 1px solid #8A8A80;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 2px 2px 2px #CCCCCC inset;
+    color: #68674F;
+    display: block;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    margin: 0;
+    outline: medium none;
+    position: relative;
+    vertical-align: middle;
+}
+
+fieldset{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+</style>
+
+
+<div class="official-charities-wrap">
+    
+    <h3 class="form-heading">Search for a JustGiving charity:</h3>
+    <form id="official-charities-form" method="get" action="">
+        <fieldset>
+            <input type="hidden" name="type" value="" />
+	        <input type="text" value="" id="official-charities-search" maxlength="150" class="input medium-length" name="query" autocomplete="off" />
+            <div id="official-charities-indicator"></div>
+        </fieldset>
+    </form>
+ 
+    <div id="official-charities-data"></div>
+
+    <script id="official-charities-template" type="text/x-jquery-tmpl">
+        <div class="official-charity-data clearfix">
+            <div class="logo-add">
+                <a href="${ShortUrl}"><img height="87" width="103" alt="${Name}" src="http://www.justgiving.com${logoFileName}" class="reveal"></a>
+            </div>
+            <div class="content">
+                <h3>${name}</h3>
+                <p>${description}</p>
+            </div>
+        </div>    
+    </script>
+   
+ </div>
+
 
 </body>
 </html>
