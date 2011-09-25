@@ -71,6 +71,9 @@
             $('#donation-status').text(data.status);
             $('#donation-data').fadeIn();
         });
+        jg.data.donation.status(donationId, function (data) {
+            $('#donation-amount').text("£" + data.amount);
+        });
     }
     
 </script>
