@@ -1,0 +1,15 @@
+﻿scripts/jquery-1.6.4.min.js
+scripts/jquery-json-2.2.min.js
+scripts/jquery-base64.min.js
+scripts/core.min.js
+scripts/data/data.min.js
+scripts/data/account.min.js
+scripts/data/charity.min.js
+scripts/data/donation.min.js
+scripts/data/event.min.js
+scripts/data/page.min.js
+scripts/data/team.min.js
+scripts/data/search.min.js
+scripts/jquery.http.min.js
+scripts/ui/ui.min.js
+scripts/ui/fundraisingWidget.min.js

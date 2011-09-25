@@ -14,39 +14,39 @@
     $.extend(jg, {
             http: {
                 get: function(settings) {
-                    var ajax = {
+                    var request = {
                         url: settings.url + (settings.url.indexOf('?')==-1 ? '?' : '&') + 'format=json' ,
                         success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); }
                     };
-                    $.ajax(ajax);
+                    $.ajax(request);
 
                 },
                 head: function(settings) {
-                    var ajax = {
+                    var request = {
                         url: settings.url,
                         type: 'HEAD',
                         success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); }
                     };
-                    $.ajax(ajax);
+                    $.ajax(request);
                 },
                 put: function(settings) {
-                    var ajax = {
+                    var request = {
                         url: settings.url,
                         success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); },
                         type: 'PUT',
                         data: $.toJSON(settings.data)
                     };
-                    $.ajax(ajax);
+                    $.ajax(request);
 
                 },
                 post: function(settings) {
-                    var ajax = {
+                    var request = {
                         url: settings.url,
                         success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); },
                         type: 'POST',
                         data: $.toJSON(settings.data)
                     };
-                    $.ajax(ajax);
+                    $.ajax(request);
                 }
             }
         });
