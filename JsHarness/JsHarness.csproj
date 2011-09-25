@@ -116,7 +116,6 @@
     <Content Include="scripts\ui\fundraisingWidget.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="scripts\jquery.http.js" />
-    <Content Include="scripts\ui\widgets.fundraising.simple.htm" />
     <Content Include="scripts\ui\widgets.fundraising.simple.js" />
     <Content Include="ui.htm" />
     <Content Include="Web.config" />
@@ -126,7 +125,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="widget-ideas.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="jg.min.combine" />
