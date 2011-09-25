@@ -16,9 +16,7 @@
                 get: function(settings) {
                     var ajax = {
                         url: settings.url + '?format=json',
-                        success: function (data) {
-                            success(settings, data);
-                        }
+                        success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); }
                     };
                     $.ajax(ajax);
 
@@ -27,14 +25,14 @@
                     var ajax = {
                         url: settings.url,
                         type: 'HEAD',
-                        success: function(data) { success(settings, data); }
+                        success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); }
                     };
                     $.ajax(ajax);
                 },
                 put: function(settings) {
                     var ajax = {
                         url: settings.url,
-                        success: function(data) { success(settings, data); },
+                        success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); },
                         type: 'PUT',
                         data: $.toJSON(settings.data)
                     };
@@ -44,19 +42,18 @@
                 post: function(settings) {
                     var ajax = {
                         url: settings.url,
-                        success: function(data) { success(settings, data); },
+                        success: function(data, textStatus, xhr) { success(settings, data, textStatus, xhr); },
                         type: 'POST',
                         data: $.toJSON(settings.data)
                     };
                     $.ajax(ajax);
-
                 }
             }
         });
 
-    function success(settings, data) {
+    function success(settings, data, textStatus, xhr) {
         if (settings.overrideCallback)
-            settings.overrideCallback(data);
+            settings.overrideCallback($.extend({ textStatus: textStatus, xhr: xhr }, data));
         else
             jg.settings.onResponse(data);
     }
