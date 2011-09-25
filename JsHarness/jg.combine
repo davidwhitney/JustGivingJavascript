@@ -12,4 +12,4 @@ scripts/data/team.js
 scripts/data/search.js
 scripts/jquery.http.js
 scripts/ui/ui.js
-scripts/ui/status.js
+scripts/ui/fundraisingWidget.js

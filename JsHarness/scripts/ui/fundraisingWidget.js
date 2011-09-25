@@ -2,7 +2,7 @@
 
     $.extend(jg.ui, {
 
-        status: function (target, pageShortName) {
+        fundraisingWidget: function (target, pageShortName) {
             target = getJQueryObject(target);
             jg.data.page.retrieve(pageShortName, function (page) {
                 var status = createStatus(page);
