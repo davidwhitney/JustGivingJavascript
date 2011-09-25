@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\css\qunit.css" />
+    <Content Include="examples\search\Default.htm" />
     <Content Include="scripts-test\default.html" />
     <Content Include="Global.asax" />
     <Content Include="Default.htm" />
