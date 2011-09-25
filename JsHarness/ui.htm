@@ -7,13 +7,20 @@
         
         jg.init({
             apiKey: 'decbf1d2',
-            rootDomain: 'https://api.staging.justgiving.com'
+            rootDomain: 'https://api.staging.justgiving.com',
+            websiteUrl: 'http://v3.staging.justgiving.com'
         });
 
         function LoadWidget() {
             $('#fr-widget-code').fadeOut();
             jg.ui.fundraisingWidget('#widgetContainer', 'David-Whitney6');
             $('#fr-widget-example').fadeIn();
+        }
+
+        function LoadSimpleWidget() {
+            $('#simple-widget-code').fadeOut();
+            jg.ui.widgets.simple('#simpleWidgetContainer', 'David-Whitney6');
+            $('#simple-widget-example').fadeIn();
         }
 
     </script>
@@ -44,6 +51,24 @@
         <div id="widgetContainer"></div>
     </section>
 
+
+    <section id="simple-widget-code">
+        <h3>Code example</h3>
+        <div>
+        &lt;div id="simpleWidgetContainer"&gt;&lt;/div&gt;<br/>
+        jQuery(function () {<br/>
+            jg.ui.widgets.simple("#simpleWidgetContainer", "David-Whitney6");<br/>
+        });
+        </div>
+        <div style="padding-top: 10px;">        
+            <a href="#" onclick="LoadSimpleWidget();">Load widget!</a>
+        </div>
+    </section>
+
+
+    <section id="simple-widget-example">
+        <div id="simpleWidgetContainer"></div>
+    </section>
 
 </body>
 </html>

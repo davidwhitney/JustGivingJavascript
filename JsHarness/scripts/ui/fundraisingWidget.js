@@ -3,23 +3,23 @@
     $.extend(jg.ui, {
 
         fundraisingWidget: function (target, pageShortName) {
-            target = getJQueryObject(target);
+            target = jg.ui.utils.getJQueryObject(target);
             jg.data.page.retrieve(pageShortName, function (page) {
                 var status = createStatus(page);
                 target.append(status.element);
             });
         }
+
     });
 
-    // Banner size will be 240 x 400 px
     var createStatus = function (page) {
         var wrapper = $("<div class='justGivingStatus'></div>");
         var logo = $("<div class='jgLogo'><img src='http://www.justgiving.com/jg-refresh/images/logos/jg-logo-header-new.png' /></div>");
         var image = $("<div class='image'><img src='http://www.justgiving.com/Utils/imaging.ashx?imageType=frpphoto&img=" + page.image.url + "&width=230' /></div>");
         var title = $("<p class='title'>" + page.title + "</p>");
         var charity = $("<p class='charityNameParagraph'><span class='charityName'>" + page.charity.name + "</span></p>");
-        var raised = $("<p class='raised'>Raised: " + page.currencySymbol + page.totalRaisedOnline + "</p>");
-        var target = $("<p class='target'>Target: " + page.currencySymbol + page.fundraisingTarget + "</p>");
+        var raised = $("<p class='raised'>Raised: " + page.currencySymbol + parseFloat(page.totalRaisedOnline + page.totalRaisedOffline).toFixed(2) + "</p>");
+        var target = $("<p class='target'>Target: " + page.currencySymbol + parseFloat(page.fundraisingTarget).toFixed(2) + "</p>");
         var donate = $("<p class='donate'><span class='donateButton'><a href=\"http://www.justgiving.com/"+ page.pageShortName +"/donate\">Donate</span></p>");
 
         var styleDetails = "<style type=\"text/css\">";
@@ -52,15 +52,6 @@
             element: wrapper
         };
 
-    };
-
-    var getJQueryObject = function (target) {
-        if (typeof target == "string") {
-            target = $(target);
-        }
-        if (target.length != 0) {
-            return target;
-        }
     };
 
 } (jQuery));
