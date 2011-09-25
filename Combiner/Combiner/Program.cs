@@ -10,7 +10,13 @@ namespace Combiner
     {
         static void Main(string[] args)
         {
-            var combineFile = args[0] ?? "jg.combine";
+            var combineFile = "jg.combine";
+
+            if(args.Count() > 0)
+            {
+                combineFile = args[0];
+            }
+
             var fileList = File.ReadAllLines(combineFile);
 
             var sb = new StringBuilder();
