@@ -10,32 +10,40 @@
             rootDomain: 'https://api.staging.justgiving.com'
         });
 
-        jQuery(function () {
-            jg.ui.fundraisingWidget("#widgetContainer", "David-Whitney6");
-        });
+        function LoadWidget() {
+            $('#fr-widget-code').fadeOut();
+            jg.ui.fundraisingWidget('#widgetContainer', 'David-Whitney6');
+            $('#fr-widget-example').fadeIn();
+        }
 
     </script>
 </head>
 <body>
 
     <header>
-        <h1>JustGiving UI</h1>
+        <h1>JustGiving UI - New JavaScript jg.ui library</h1>
     </header>
 
-    <section>
-        <h2>New Fundraising widget!</h2>
-        <div id="widgetContainer"></div>
-    </section>
+    <h2>New Fundraising widget!</h2>
 
-    <section>
-        <h2>Using new Javascript jg.ui library</h2>
+    <section id="fr-widget-code">
+        <h3>Code example</h3>
         <div>
         &lt;div id="widgetContainer"&gt;&lt;/div&gt;<br/>
         jQuery(function () {<br/>
             jg.ui.fundraisingWidget("#widgetContainer", "David-Whitney6");<br/>
         });<br/>
         </div>
+        <div>        
+            <a href="#" onclick="LoadWidget();">Load widget!</a>
+        </div>
     </section>
+
+
+    <section id="fr-widget-example">
+        <div id="widgetContainer"></div>
+    </section>
+
 
 </body>
 </html>
