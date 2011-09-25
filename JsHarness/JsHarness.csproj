@@ -114,9 +114,10 @@
     <Content Include="scripts-test\qunit.js" />
     <Content Include="scripts\jquery-json-2.2.min.js" />
     <Content Include="scripts\jquery-base64.min.js" />
-    <Content Include="scripts\ui\status.js" />
+    <Content Include="scripts\ui\fundraisingWidget.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="scripts\jquery.http.js" />
+    <Content Include="scripts\ui\widgets.fundraising.simple.js" />
     <Content Include="ui.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -127,6 +128,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="jg.min.combine" />
     <None Include="jg.combine" />
   </ItemGroup>
   <ItemGroup>

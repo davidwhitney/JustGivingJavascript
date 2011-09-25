@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>JustGiving.Data</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="jg.js"></script>
 </head>
@@ -47,10 +47,38 @@
         });
     }
     
+    function LoadTeamData() {
+
+        $('#team-data').fadeOut();
+        var teamShortName = $('#teamShortName').val();
+
+        jg.data.team.retrieve(teamShortName, function (data) {
+            $('#team-name').text(data.name);
+            $('#team-story').html(data.story);
+            $('#team-data').fadeIn();
+        });
+    }
+    
+    function LoadDonationData() {
+
+        $('#donation-data').fadeOut();
+        var donationId = $('#donationId').val();
+
+        jg.data.donation.retrieve(donationId, function (data) {
+            $('#donation-donorDisplayName').text(data.donorDisplayName);
+            $('#donation-amount').text(data.amount);
+            $('#donation-message').text(data.message);
+            $('#donation-status').text(data.status);
+            $('#donation-data').fadeIn();
+        });
+        jg.data.donation.status(donationId, function (data) {
+            $('#donation-amount').text("£" + data.amount);
+        });
+    }
     
 </script>
 
-<h1>JustGiving Javascript SDK bitches!</h1>
+<h1>JustGiving Javascript SDK - For great justice!</h1>
 
 <div>
 <h2>Fundraising Page Data</h2>
@@ -80,6 +108,34 @@
         <h3 id="event-name"></h3>
         <div id="event-description"></div>
         <div id="event-expiryDate"></div>
+    </div>
+</div>
+
+<div>
+<h2>Team Data</h2>
+    <div style="padding-bottom: 20px;">
+        <input id="teamShortName" type="text" value="awesome"/>
+        <input type="button" value="Load JustGiving Team" onclick="LoadTeamData();"/>
+    </div>
+
+    <div id="team-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
+        <h3 id="team-name"></h3>
+        <div id="team-story"></div>
+    </div>
+</div>
+
+<div>
+<h2>Donation Data</h2>
+    <div style="padding-bottom: 20px;">
+        <input id="donationId" type="text" value="20905200"/>
+        <input type="button" value="Load JustGiving Donation" onclick="LoadDonationData();"/>
+    </div>
+
+    <div id="donation-data" style="display:none; width: 500px; border: 1px solid black; padding: 25px;">
+        <h3 id="donation-donorDisplayName"></h3>
+        <div id="donation-amount"></div>
+        <div id="donation-message"></div>
+        <div id="donation-status"></div>
     </div>
 </div>
 

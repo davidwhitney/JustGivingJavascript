@@ -8,6 +8,7 @@
             jg.settings = $.extend({
                 apiKey: '',
                 rootDomain: 'https://api.justgiving.com',
+                websiteUrl: 'http://www.justgiving.com',
                 apiVersion: '1'
              }, supplied);
         },
