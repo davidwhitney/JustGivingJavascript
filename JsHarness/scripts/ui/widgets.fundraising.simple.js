@@ -4,9 +4,13 @@
         if (typeof theme == "string") {
             theme = jg.ui.widgets.simple.themes[theme];
         }
-        theme = theme || jg.ui.widgets.simple.themes.dark;
         target = jg.ui.utils.getJQueryObject(target);
         jg.data.page.retrieve(pageShortName, function (page) {
+            theme = theme || {
+                background: "#" + page.branding.thermometerBackgroundColour,
+                foreground: "#" + page.branding.thermometerTextColour,
+                highlight: "#" + page.branding.thermometerFillColour
+            };
             target.append(createWidget(page, theme).element);
         })
     };
@@ -61,7 +65,7 @@
             + "        <img class='logo' src='http://www.justgiving.com/jg-refresh/images/logos/jg-logo-header-new.png' />"
             + "</section>";
 
-        var totalRaised = page.totalRaisedOffline + page.totalRaisedOnline;
+        var totalRaised = parseFloat(page.totalRaisedOffline) + parseFloat(page.totalRaisedOnline);
 
         var model = {
             ownerName: page.owner,
